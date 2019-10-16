@@ -1,0 +1,32 @@
+{
+    "name": "nwidart/dashboard-module",
+    "description": "",
+    "authors": [
+        {
+            "name": "Leonardo BAV",
+            "email": "suporte@scancode.com.br"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Dashboard\\Providers\\DashboardServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Dashboard\\": ""
+        }
+    },
+    "type": "laravel-module",
+    "require": {
+        "nwidart/laravel-modules":"^6.0",
+        "joshbrw/laravel-module-installer": "v0.1.4",
+        "laravelcollective/html": "^6.0",
+        "maatwebsite/excel": "^3.1"
+    }
+}
