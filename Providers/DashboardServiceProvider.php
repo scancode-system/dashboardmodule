@@ -31,6 +31,7 @@ class DashboardServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(BladeServiceProvider::class);
         $this->app->register(ViewComposerServiceProvider::class);
     }
 

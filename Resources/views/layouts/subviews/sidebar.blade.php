@@ -7,23 +7,28 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{  route('companies.edit', 2) }}">
+                <a class="nav-link" href="{{  route('orders.index') }}">
                     <i class="nav-icon fa fa-opencart"></i> Pedidos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{  route('companies.edit', 2) }}">
+                <a class="nav-link" href="{{  route('products.index') }}">
                     <i class="nav-icon fa fa-cube"></i> Produtos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{  route('companies.edit', 3) }}">
+                <a class="nav-link" href="{{  route('clients.index') }}">
                     <i class="nav-icon fa fa-users"></i> Clientes
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{  route('companies.edit', 4) }}">
+                <a class="nav-link" href="{{  route('payments.index') }}">
                     <i class="nav-icon fa fa-credit-card"></i> Pagamentos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{  route('representatives.index') }}">
+                    <i class="nav-icon fa fa-user-circle"></i> Representantes
                 </a>
             </li>
         </ul>

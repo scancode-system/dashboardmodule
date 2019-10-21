@@ -19,7 +19,7 @@
 <h3 class="mb-3">Obrigatoriedade</h3>
 
 <div class="form-group row">
-	<label for="staticEmail" class="col-sm-1 col-form-label">Razão Social</label>
+	<label for="staticEmail" class="col-sm-2 col-form-label">Razão Social</label>
 	<div class="col-sm-10">
 		<label class="switch switch-primary switch-lg mb-0 ml-3">
 			<input type="checkbox" class="switch-input" checked>
@@ -28,7 +28,7 @@
 	</div>
 </div>
 <div class="form-group row">
-	<label for="staticEmail" class="col-sm-1 col-form-label">CNPJ</label>
+	<label for="staticEmail" class="col-sm-2 col-form-label">CNPJ</label>
 	<div class="col-sm-10">
 		<label class="switch switch-primary switch-lg mb-0 ml-3">
 			<input type="checkbox" class="switch-input" checked>
@@ -37,7 +37,7 @@
 	</div>
 </div>
 <div class="form-group row">
-	<label for="staticEmail" class="col-sm-1 col-form-label">Telefone</label>
+	<label for="staticEmail" class="col-sm-2 col-form-label">Telefone</label>
 	<div class="col-sm-10">
 		<label class="switch switch-primary switch-lg mb-0 ml-3">
 			<input type="checkbox" class="switch-input" checked>
@@ -46,7 +46,7 @@
 	</div>
 </div>
 <div class="form-group row">
-	<label for="staticEmail" class="col-sm-1 col-form-label">Email</label>
+	<label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
 	<div class="col-sm-10">
 		<label class="switch switch-primary switch-lg mb-0 ml-3">
 			<input type="checkbox" class="switch-input" checked>
@@ -55,7 +55,7 @@
 	</div>
 </div>
 <div class="form-group row">
-	<label for="staticEmail" class="col-sm-1 col-form-label">Comprador</label>
+	<label for="staticEmail" class="col-sm-2 col-form-label">Comprador</label>
 	<div class="col-sm-10">
 		<label class="switch switch-primary switch-lg mb-0 ml-3">
 			<input type="checkbox" class="switch-input" checked>
