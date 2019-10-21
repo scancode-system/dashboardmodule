@@ -84,3 +84,9 @@ Route::prefix('orders')->middleware('auth')->group(function() {
 
 	Route::delete('{order}/destroy', 'OrderController@destroy')->name('orders.destroy');
 });
+
+Route::prefix('order_items')->middleware('auth')->group(function() {
+	Route::post('', 'OrderItemController@store')->name('order_items.store');
+	
+	Route::delete('{order_item}/destroy', 'OrderItemController@destroy')->name('order_items.destroy');
+});

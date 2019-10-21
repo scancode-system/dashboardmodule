@@ -10,11 +10,13 @@
 			<div class="modal-body">
 				{{ $slot }}
 			</div>
+			@if(isset($edit_route))
 			<div class="modal-footer justify-content-start">
 				<a href="{{ route($edit_route, [$model_id]) }}" class="btn btn-brand btn-primary">
 					<i class="fa fa-edit"></i><span>Editar</span>
 				</a>
 			</div>
+			@endif
 		</div>
 	</div>
-</div>	
+</div>

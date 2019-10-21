@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="card">
-
 	@include('dashboard::orders.subviews.index_header',['search' => 'Pesquisar', 'route_search' => 'orders.index', 'route_add' => 'orders.create'])
 	<div class="card-body">
 		@alert_success()
