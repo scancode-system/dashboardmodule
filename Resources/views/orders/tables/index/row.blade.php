@@ -13,6 +13,6 @@
 				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#orders_destroy_1"><i class="fa fa-trash-o"></i></button>
 			</div>
 		</td>
-		@include('dashboard::orders.modals.modal_view_orders')
+		@include('dashboard::orders.modals.modal_orders_view')
 		@modal_destroy(['route_destroy' => 'orders.destroy', 'model' => 1, 'modal_id' => 'orders_destroy_1'])
 	</tr>

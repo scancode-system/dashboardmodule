@@ -4,6 +4,7 @@
 Pedido #{{ '1' }}
 @endslot
 
+<h5>Informações</h5>
 <div class="row justify-content-center mb-2">
 	<div class="col"><strong>Cliente: </strong></div>
 	<div class="col">{{ 'João' }}</div>
@@ -21,6 +22,14 @@ Pedido #{{ '1' }}
 	<div class="col">23</div>
 </div>
 <div class="row justify-content-center mb-2">
+	<div class="col"><strong>Transportadora: </strong></div>
+	<div class="col">{{ 'nepunocemo' }}</div>
+</div>
+<div class="row justify-content-center mb-2">
+	<div class="col"><strong>Entrega: </strong></div>
+	<div class="col">{{ 'PARCIAL' }}</div>
+</div>
+<div class="row justify-content-center mb-2">
 	<div class="col"><strong>Abertura: </strong></div>
 	<div class="col">23/34/2045</div>
 </div>
@@ -28,6 +37,8 @@ Pedido #{{ '1' }}
 	<div class="col"><strong>Fechamento: </strong></div>
 	<div class="col">23/34/2045</div>
 </div>
+<hr>
+<h5>Valores</h5>
 <div class="row justify-content-center mb-2">
 	<div class="col"><strong>Total Bruto: </strong></div>
 	<div class="col">@currency(1567.45)</div>

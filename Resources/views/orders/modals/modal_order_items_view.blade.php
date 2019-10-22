@@ -1,4 +1,4 @@
-@modal_view(['modal_id' => 'orders_view_edit_1'])
+@modal_view(['modal_id' => 'modal_order_items_view_1'])
 
 @slot('title')
 Pedido #{{ '1' }}
