@@ -27,10 +27,11 @@
             <div class="list-group list-group-accent">
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Importações</div>
 
-                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-warning list-group-item-divider list-group-item-action">Clientes</a>
+                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-primary list-group-item-divider list-group-item-action">Clientes</a>
                 <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-info list-group-item-divider list-group-item-action">Produtos</a>
                 <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-danger list-group-item-divider list-group-item-action">Pagamentos</a>
-                
+                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-warning list-group-item-divider list-group-item-action">Representantes</a>
+                <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-success list-group-item-divider list-group-item-action">Transportadora</a>
             </div>
         </div>
         <div class="tab-pane" id="messages" role="tabpanel">
