@@ -1,43 +1,35 @@
-@if(session()->has('companies.edit'))
-<div class="alert alert-success alert-dismissible fade show">
-	{{ session()->get('companies.edit') }}
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		<span aria-hidden="true">&times;</span>
-	</button>
-</div>
-@endif
-@if ($errors->any())
-<div class="alert alert-danger">
-	<ul class="mb-0">
-		@foreach ($errors->all() as $error)
-		<li>{{ $error }}</li>
-		@endforeach
-	</ul>
-</div>
-@endif
-
 <div class="row">
 	<div class="col">
+		{{ Form::model($company->company_address, ['route' => 'company_addresses.update', 'method' => 'put']) }}
 		<div class="form-group">
-			{{ Form::label('address', 'Rua') }}
-			{{ Form::text('address', null, ['class' => 'form-control']) }}
+			{{ Form::label('street', 'Rua') }}
+			{{ Form::text('street', old('street'), ['class' => 'form-control']) }}
+		</div>
+		<div class="form-group">
+			{{ Form::label('number', 'Número') }}
+			{{ Form::number('number', old('number'), ['class' => 'form-control', 'step' => '0.1']) }}
+		</div>
+		<div class="form-group">
+			{{ Form::label('apartment', 'Apartamento') }}
+			{{ Form::text('apartment', old('apartment'), ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
 			{{ Form::label('neighborhood', 'Bairro') }}
-			{{ Form::text('neighborhood', null, ['class' => 'form-control']) }}
+			{{ Form::text('neighborhood', old('neighborhood'), ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
 			{{ Form::label('city', 'Cidade') }}
-			{{ Form::text('city', null, ['class' => 'form-control']) }}
+			{{ Form::text('city', old('city'), ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
 			{{ Form::label('st', 'Estado') }}
-			{{ Form::text('st', null, ['class' => 'form-control']) }}
+			{{ Form::text('st', old('st'), ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
-			{{ Form::label('zip_code', 'CEP') }}
-			{{ Form::text('zip_code', null, ['class' => 'form-control']) }}
+			{{ Form::label('postcode', 'CEP') }}
+			{{ Form::text('postcode', old('postcode'), ['class' => 'form-control']) }}
 		</div>
 		{{ Form::submit('Salvar', ['class' => 'btn btn-primary']) }}
+		{{ Form::close() }}
 	</div>
 </div>

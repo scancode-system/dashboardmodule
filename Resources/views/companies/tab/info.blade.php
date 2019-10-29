@@ -1,33 +1,17 @@
-@if(session()->has('companies.edit'))
-<div class="alert alert-success alert-dismissible fade show">
-	{{ session()->get('companies.edit') }}
-	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		<span aria-hidden="true">&times;</span>
-	</button>
-</div>
-@endif
-@if ($errors->any())
-<div class="alert alert-danger">
-	<ul class="mb-0">
-		@foreach ($errors->all() as $error)
-		<li>{{ $error }}</li>
-		@endforeach
-	</ul>
-</div>
-@endif
 <div class="row">
 	<div class="col">
+		{{ Form::model($company->company_info, ['route' => 'company_infos.update', 'method' => 'put']) }}
 		<div class="form-group">
 			{{ Form::label('cnpj', 'CNPJ') }}
 			{{ Form::text('cnpj', null, ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
-			{{ Form::label('company_name', 'Razão Social') }}
-			{{ Form::text('company_name', null, ['class' => 'form-control']) }}
+			{{ Form::label('corporate_name', 'Razão Social') }}
+			{{ Form::text('corporate_name', null, ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
-			{{ Form::label('trade_name', 'Nome Fantasia') }}
-			{{ Form::text('trade_name', null, ['class' => 'form-control']) }}
+			{{ Form::label('fantasy_name', 'Nome Fantasia') }}
+			{{ Form::text('fantasy_name', null, ['class' => 'form-control']) }}
 		</div>
 		<div class="form-group">
 			{{ Form::label('state_registration', 'Inscrição Estadual') }}
@@ -43,6 +27,7 @@
 		</div>
 		{{ Form::submit('Salvar', ['class' => 'btn btn-primary']) }}
 	</div>
+	{{ Form::close() }}
 	<div class="col">
 		<div id="dz-logo" class="dropzone h-100"></div>
 	</div>
@@ -62,9 +47,12 @@
 	Dropzone.autoDiscover = false;
 
 	var dz_logo = new Dropzone('#dz-logo', {
-		url: '{{ route("companies.upload") }}',
+		url: '{{ route("companies.updateLogo") }}',
 		headers: {'X-CSRF-Token': "{{ csrf_token() }}"},
-		dictDefaultMessage: 'Faça o upload da sua LOGO aqui'
+		dictDefaultMessage: 'Faça o upload da sua LOGO aqui',
+		success: function(file, response, xhr){
+            window.location.replace("{{ route('companies.edit', 0) }}");
+        }
 	});
 
 	@if(false)

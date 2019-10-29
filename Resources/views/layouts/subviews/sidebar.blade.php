@@ -22,15 +22,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{  route('payments.index') }}">
-                    <i class="nav-icon fa fa-credit-card"></i> Pagamentos
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{{  route('representatives.index') }}">
                     <i class="nav-icon fa fa-user-circle"></i> Representantes
                 </a>
-            </li>
+            </li>      
+            @loader(['loader_path' => 'sidebar.item'])
             <li class="nav-item mt-auto">
                 <a class="nav-link nav-link-info" href="https://coreui.io">
                     <i class="nav-icon fa fa-qrcode"></i> Portal Scancode

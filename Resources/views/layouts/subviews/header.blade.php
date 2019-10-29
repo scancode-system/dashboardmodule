@@ -7,10 +7,10 @@
         <img class="navbar-brand-minimized" src="{{ url('modules/dashboard/img/logo.png') }}" width="30" height="30" alt="Scancode Logo">
     </a>
     <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item d-md-down-none mr-3">Logado como <strong>{{ $user->name }}</strong>!</li>
+        <li class="nav-item d-md-down-none mr-3">Logado como <strong>{{ $company->name }}</strong>!</li>
         <li class="nav-item dropdown mr-4">
             <a class="nav-link nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <img class="img-avatar" src="{{ url('/') }}/modules/dashboard/img/companies/logo.png" alt="logo">
+                <img class="img-avatar" src="{{ url($company->logo) }}" alt="logo">
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header text-center">

@@ -13,6 +13,8 @@
 				</nav>
 			</div>
 			<div class="card-body">
+				@alert_errors()
+				@alert_success()
 				<div class="tab-content">
 					<div class="tab-pane {{ ($tab==0)?'show active':'' }}" >
 						@include('dashboard::companies.tab.info')
@@ -38,3 +40,17 @@
 	Empresa
 </li>
 @endsection
+
+
+@push('scripts')
+
+{{ Html::script('modules/dashboard/coreui/node_modules/jquery.maskedinput/src/jquery.maskedinput.js') }}
+<script>
+	$('[name="phone"]').mask('(99) 999999999');
+	$('[name="cnpj"]').mask('99.999.999/9999-99');
+	$('[name="state_registration"]').mask('999.999.999.999');
+
+	$('[name="postcode"]').mask('99999-999');
+</script>
+
+@endpush

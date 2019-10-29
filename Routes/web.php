@@ -10,24 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// auth
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+// dashboard
 Route::prefix('dashboard')->middleware('auth')->group(function() {
-
 	Route::get('', 'DashboardController@index')->name('dashboard');
-
 });
 
-
+// companies
 Route::prefix('companies')->middleware('auth')->group(function() {
-
 	Route::get('{tab}', 'CompanyController@edit')->name('companies.edit');
-	Route::put('upload', 'CompanyController@upload')->name('companies.upload');
-
+	Route::post('logo', 'CompanyController@updateLogo')->name('companies.updateLogo');
+});
+Route::prefix('company_infos')->middleware('auth')->group(function() {
+	Route::put('', 'CompanyInfoController@update')->name('company_infos.update');
+});
+Route::prefix('company_addresses')->middleware('auth')->group(function() {
+	Route::put('', 'CompanyAddressController@update')->name('company_addresses.update');
 });
 
+// settings
 Route::prefix('settings')->middleware('auth')->group(function() {
 	Route::get('{tab}', 'SettingController@index')->name('settings.index');
 });
@@ -51,17 +57,6 @@ Route::prefix('clients')->middleware('auth')->group(function() {
 	Route::post('', 'ClientController@store')->name('clients.store');
 	Route::put('', 'ClientController@update')->name('clients.update');
 	Route::delete('{clients}/destroy', 'ClientController@destroy')->name('clients.destroy');		
-});
-
-
-Route::prefix('payments')->middleware('auth')->group(function() {
-	Route::get('', 'PaymentController@index')->name('payments.index');
-	Route::get('create', 'PaymentController@create')->name('payments.create');
-	Route::get('{payments}/edit', 'PaymentController@edit')->name('payments.edit');
-
-	Route::post('', 'PaymentController@store')->name('payments.store');
-	Route::put('', 'PaymentController@update')->name('payments.update');
-	Route::delete('{payments}/destroy', 'PaymentController@destroy')->name('payments.destroy');		
 });
 
 

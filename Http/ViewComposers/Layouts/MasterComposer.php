@@ -3,24 +3,25 @@
 namespace Modules\Dashboard\Http\ViewComposers\Layouts;
 
 use Modules\Dashboard\Services\ViewComposer\ServiceComposer;
+use Modules\Dashboard\Repositories\CompanyRepository;
 
 class MasterComposer extends ServiceComposer {
 
-    private $user;
+    private $company;
 
 
     public function assign($view){
-        $this->user();
+        $this->company();
     }
 
 
-    private function user(){
-        $this->user = auth()->user();
+    private function company(){
+        $this->company = CompanyRepository::company();
     }
 
 
     public function view($view){
-        $view->with('user', $this->user);
+        $view->with('company', $this->company);
     }
 
 }

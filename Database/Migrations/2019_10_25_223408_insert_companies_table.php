@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-use App\User;
+use Modules\Dashboard\Entities\Company;
 
-class InsertUserTable extends Migration
+class InsertCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,11 @@ class InsertUserTable extends Migration
      */
     public function up()
     {
-        $user = new User();
+        $user = new Company();
         $user->id = 1;
-        $user->name = 'admin';
-        $user->email = 'admin2';
-        $user->password = bcrypt('admin');
+        $user->name = 'scancode';
+        $user->email = 'scancode';
+        $user->password = bcrypt('scancode');
         $user->save();
     }
 
@@ -30,6 +30,6 @@ class InsertUserTable extends Migration
      */
     public function down()
     {
-        User::find(1)->delete();
+        Company::find(1)->delete();
     }
 }

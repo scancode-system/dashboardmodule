@@ -26,6 +26,7 @@ class BladeServiceProvider extends ServiceProvider {
 		Blade::include('dashboard::includes.header_search_add_include', 'header_search_add');
 		Blade::include('dashboard::includes.alert_success_include', 'alert_success');
 		Blade::include('dashboard::includes.alert_errors_include', 'alert_errors');
+		Blade::include('dashboard::includes.loader', 'loader');
 
 	}
 
