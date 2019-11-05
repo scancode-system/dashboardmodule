@@ -18,9 +18,6 @@ class ViewComposerServiceProvider extends ServiceProvider {
 
 		// settings
 		View::composer('dashboard::settings.index', 'Modules\Dashboard\Http\ViewComposers\Setting\IndexComposer');
-
-		// companies
-		View::composer('dashboard::orders.edit', 'Modules\Dashboard\Http\ViewComposers\Order\EditComposer');
 	}
 
 	public function register() {

@@ -56,7 +56,17 @@ class GuardsServiceProvider extends ServiceProvider {
             'expire' => 60,
         ];
 
-        config(['auth.passwords' => $passwords]);        
+        config(['auth.passwords' => $passwords]); 
+
+        $filesystems = config('filesystems.disks');
+        $filesystems['modules_assets'] =  [
+            'driver' => 'local',
+            'root' => public_path('modules'),
+        ];
+
+        config(['filesystems.disks' => $filesystems]);
+
+
     }
 
 }
