@@ -11,11 +11,14 @@
 						<a class="nav-item nav-link {{ ($tab=='requests')?'active':'' }}" href="{{ route('settings.index', 'requests') }}" >Pedidos</a>
 						<a class="nav-item nav-link {{ ($tab=='clients')?'active':'' }}" href="{{ route('settings.index', 'clients') }}">Clientes</a>
 						<a class="nav-item nav-link {{ ($tab=='prints')?'active':'' }}" href="{{ route('settings.index', 'prints') }}">Impressão</a>
+						@loader(['loader_path' => 'settings.nav_tab'])
+
 					</div>
 				</nav>
 			</div>
 			<div class="card-body">
 				<div class="tab-content">
+					@loader(['loader_path' => 'settings.tab_content'])
 					<div class="tab-pane {{ ($tab=='events')?'show active':'' }}" >
 						@include('dashboard::settings.tab.events.events')
 					</div>
