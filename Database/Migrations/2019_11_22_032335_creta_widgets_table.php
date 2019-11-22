@@ -17,9 +17,10 @@ class CretaWidgetsTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('name')->unique();
-            $table->boolean('visible')->default(false);
+            $table->boolean('visible')->default(true);
             $table->integer('columns')->default(6);
             $table->string('view');
+            $table->integer('order')->default(1);
 
             $table->timestamps();
         });

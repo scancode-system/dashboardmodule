@@ -37,3 +37,7 @@ Route::prefix('company_addresses')->middleware('auth')->group(function() {
 Route::prefix('settings')->middleware('auth')->group(function() {
 	Route::get('{tab}', 'SettingController@index')->name('settings.index');
 });
+
+Route::prefix('setting_dasboard')->middleware('auth')->group(function() {
+	Route::put('{widget}', 'SettingDashboardController@updateWidget')->name('setting_dashboard.update.widget');
+});

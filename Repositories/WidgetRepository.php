@@ -14,12 +14,16 @@ class WidgetRepository
 
 
 	public static function loadVisible(){
-		return Widget::where('visible', true)->get();
+		return Widget::where('visible', true)->orderBy('order')->get();
 	}
 
 
 	public static function storeMany(Array $data_widgets){
 		return Widget::insert($data_widgets);
+	}
+
+	public static function update($widget, $data_widgets){
+		return $widget->update($data_widgets);
 	}
 
 	public static function removeByName($name){
