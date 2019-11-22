@@ -1,4 +1,10 @@
 <div class="row">
+	@foreach($widgets as $widget)
+	@include($widget->view)
+	@endforeach
+</div>
+
+<div class="row">
 	<div class="col-sm-6 col-lg-3">
 		<div class="card text-white bg-primary">
 			<div class="card-body pb-0">

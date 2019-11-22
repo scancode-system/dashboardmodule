@@ -1,13 +1,13 @@
 <aside class="aside-menu">
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
-                <i class="fa fa-upload"></i>
+            <a class="nav-link active" data-toggle="tab" href="#messages" role="tab">
+                <i class="fa fa-file-excel-o"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
-                <i class="fa fa-file-excel-o"></i>
+            <a class="nav-link" data-toggle="tab" href="#timeline" role="tab">
+                <i class="fa fa-upload"></i>
             </a>
         </li>
         <li class="nav-item">
@@ -23,7 +23,10 @@
     </ul>
     <!-- Tab panes-->
     <div class="tab-content">
-        <div class="tab-pane active" id="timeline" role="tabpanel">
+        <div class="tab-pane active" id="messages" role="tabpanel">
+            @loader(['loader_path' => 'aside.report'])
+        </div>
+        <div class="tab-pane" id="timeline" role="tabpanel">
             <div class="list-group list-group-accent">
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Importações</div>
 
@@ -33,9 +36,6 @@
                 <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-warning list-group-item-divider list-group-item-action">Representantes</a>
                 <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-accent-success list-group-item-divider list-group-item-action">Transportadora</a>
             </div>
-        </div>
-        <div class="tab-pane" id="messages" role="tabpanel">
-            @loader(['loader_path' => 'aside.report'])
         </div>
         <div class="tab-pane p-3" id="settings" role="tabpanel">
             <h6>Backup</h6>
