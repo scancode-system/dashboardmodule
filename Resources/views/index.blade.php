@@ -1,7 +1,7 @@
 @extends('dashboard::layouts.master')
 
 @section('content')
-@include('dashboard::widgets.index')
+@loader(['loader_path' => 'dashboard.dashboard'])
 @endsection
 
 @section('breadcrumb')

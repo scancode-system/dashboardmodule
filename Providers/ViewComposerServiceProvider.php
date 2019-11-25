@@ -17,7 +17,7 @@ class ViewComposerServiceProvider extends ServiceProvider {
 		View::composer('dashboard::settings.index', 'Modules\Dashboard\Http\ViewComposers\Setting\IndexComposer');
 		View::composer('dashboard::loader.settings.body', 'Modules\Dashboard\Http\ViewComposers\Settings\SettingComposer');
 		// widgets
-		View::composer('dashboard::widgets.index', 'Modules\Dashboard\Http\ViewComposers\Widgets\WidgetComposer');
+		View::composer('dashboard::loader.dashboard.dashboard', 'Modules\Dashboard\Http\ViewComposers\Widgets\WidgetComposer');
 	}
 
 	public function register() {
