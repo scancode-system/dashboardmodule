@@ -15,13 +15,12 @@
                 <i class="fa fa-database"></i>
             </a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#layouts" role="tab">
                 <i class="fa fa-sitemap"></i>
             </a>
-        </li>
+        </li>-->
     </ul>
-    <!-- Tab panes-->
     <div class="tab-content">
         <div class="tab-pane active" id="messages" role="tabpanel">
             @loader(['loader_path' => 'aside.report'])
