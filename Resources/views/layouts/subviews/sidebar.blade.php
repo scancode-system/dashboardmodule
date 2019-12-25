@@ -7,11 +7,8 @@
                 </a>
             </li>  
             @loader(['loader_path' => 'sidebar.item'])
-            <li class="nav-item mt-auto">
-                <a class="nav-link nav-link-info" href="https://coreui.io">
-                    <i class="nav-icon fa fa-qrcode"></i> Portal Scancode
-                </a>
-            </li>
+            <li class="nav-item mt-auto"></li>
+            @loader(['loader_path' => 'sidebar.bottom'])
         </ul>
     </nav>
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>

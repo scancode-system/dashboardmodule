@@ -21,6 +21,12 @@ class DashboardServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+
+//        dd(config('app.timezone'));
+        date_default_timezone_set('America/Sao_Paulo');
+  //      \Config::set('app.timezone', 'America/Sao_Paulo');
+            //    config(['app.timezone' => 'America/Sao_Paulo']);
+               // config(['app.timezone' => 'America/Chicago']);
     }
 
     /**
@@ -30,6 +36,9 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
+               // \Config::set('app.timezone', 'America/Sao_Paulo');
+                       //config(['app.timezone' => 'America/Sao_Paulo']);
+
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(BladeServiceProvider::class);
         $this->app->register(ViewComposerServiceProvider::class);
