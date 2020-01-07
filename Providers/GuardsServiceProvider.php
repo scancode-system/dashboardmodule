@@ -67,6 +67,10 @@ class GuardsServiceProvider extends ServiceProvider {
         config(['filesystems.disks' => $filesystems]);
 
 
+        /* InnoDB */
+        $mysql_setting = config("database.connections.mysql");
+        $mysql_setting['engine'] = 'innodb';
+        config(['database.connections.mysql' => $mysql_setting]);
     }
 
 }
