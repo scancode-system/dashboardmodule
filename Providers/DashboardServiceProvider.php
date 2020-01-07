@@ -4,6 +4,7 @@ namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\Schema;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,7 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
         $this->app->setLocale('pt');
 
         $this->registerTranslations();
