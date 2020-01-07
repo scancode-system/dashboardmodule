@@ -44,6 +44,7 @@ class DashboardServiceProvider extends ServiceProvider
         $this->app->register(ViewComposerServiceProvider::class);
         $this->app->register(GuardsServiceProvider::class);
         $this->app->register(ObserverServiceProvider::class);
+        $this->app->register(MiddlewareServiceProvider::class);
     }
 
     /**

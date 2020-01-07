@@ -4,6 +4,7 @@ namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Modules\Dashboard\Http\ViewComposers\Layouts\Subviews\Aside\BackupComposer;
 
 
 class ViewComposerServiceProvider extends ServiceProvider {
@@ -11,6 +12,7 @@ class ViewComposerServiceProvider extends ServiceProvider {
 	public function boot() {
         // layouts
 		View::composer('dashboard::layouts.master', 'Modules\Dashboard\Http\ViewComposers\Layouts\MasterComposer');
+		View::composer('dashboard::layouts.subviews.aside.backup', BackupComposer::class);
         // companies
 		View::composer('dashboard::companies.edit', 'Modules\Dashboard\Http\ViewComposers\Company\EditComposer');
 		// settings

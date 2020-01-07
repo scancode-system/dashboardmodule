@@ -41,3 +41,8 @@ Route::prefix('settings')->middleware('auth')->group(function() {
 Route::prefix('setting_dasboard')->middleware('auth')->group(function() {
 	Route::put('{widget}', 'SettingDashboardController@updateWidget')->name('setting_dashboard.update.widget');
 });
+
+
+Route::prefix('backup')->middleware('auth')->group(function() {
+	Route::put('', 'BackupController@update')->name('backup.update');
+});
