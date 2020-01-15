@@ -2,6 +2,6 @@
 
 use Illuminate\Http\Request;
 
-Route::get('/dashboard', function (Request $request) {
+Route::get('/dashboard/check', function (Request $request) {
 	return response()->json([]);
 });
