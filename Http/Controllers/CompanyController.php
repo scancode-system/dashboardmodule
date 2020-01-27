@@ -16,6 +16,10 @@ class CompanyController extends Controller
         return view('dashboard::companies.edit');
     }
 
+    public function update(Request $request){
+    	CompanyRepository::update($request->all());
+        return back()->with('success', 'Login atualizado com sucesso.');
+    }
 
     public function updateLogo(Request $request){
     	$request->file->store('companies/logo/', 'public');

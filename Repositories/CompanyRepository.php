@@ -12,6 +12,11 @@ class CompanyRepository
 		return Company::limit(1)->with('company_info', 'company_address')->first();
 	}
 
+	// UPDATE
+	public static function update($data){
+		$company = self::company();
+		$company->update($data);
+	}
 
 	public static function updateLogo($new_path){
 		$company = self::company();

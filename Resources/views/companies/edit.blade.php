@@ -9,6 +9,7 @@
 					<div class="nav nav-tabs" role="tablist">
 						<a class="nav-item nav-link {{ ($tab==0)?'active':'' }}" href="{{ route('companies.edit', 0) }}" >Dados da Empresa</a>
 						<a class="nav-item nav-link {{ ($tab==1)?'active':'' }}" href="{{ route('companies.edit', 1) }}">Endereço</a>
+						<a class="nav-item nav-link {{ ($tab==2)?'active':'' }}" href="{{ route('companies.edit', 2) }}">Login</a>
 					</div>
 				</nav>
 			</div>
@@ -23,7 +24,7 @@
 						@include('dashboard::companies.tab.address')
 					</div>
 					<div class="tab-pane {{ ($tab==2)?'show active':'' }}">
-						
+						@include('dashboard::companies.tab.login')
 					</div>
 				</div>
 			</div>

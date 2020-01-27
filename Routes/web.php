@@ -1,15 +1,9 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', function () {
+    return redirect()->route('dashboard');
+});
+
 
 // auth
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -22,10 +16,13 @@ Route::prefix('dashboard')->middleware('auth')->group(function() {
 });
 
 // companies
-Route::prefix('companies')->middleware('auth')->group(function() {
+Route::prefix('companies')->middleware('auth')->group(function() 
+{
 	Route::get('{tab}', 'CompanyController@edit')->name('companies.edit');
 	Route::post('logo', 'CompanyController@updateLogo')->name('companies.updateLogo');
+	Route::put('', 'CompanyController@update')->name('company.update');
 });
+
 Route::prefix('company_infos')->middleware('auth')->group(function() {
 	Route::put('', 'CompanyInfoController@update')->name('company_infos.update');
 });
