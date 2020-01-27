@@ -28,6 +28,8 @@ class ImportService {
 		unset($company_info['trade_name']);
 		unset($company_info['ddd']);
 		unset($company_info['observation']);
+		unset($company_info['id']);
+		unset($company_info['company_id']);
 		CompanyRepository::updateInfo($company_info);
 
 		$company_address = (array)$data->company_address;
@@ -35,6 +37,8 @@ class ImportService {
 		$company_address['postcode'] = $company_address['zip_code'];
 		unset($company_address['address']);
 		unset($company_address['zip_code']);
+		unset($company_address['id']);
+		unset($company_address['company_id']);
 		CompanyRepository::updateAddress($company_address);
 	}
 
