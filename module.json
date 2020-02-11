@@ -8,6 +8,6 @@
         "Modules\\Dashboard\\Providers\\DashboardServiceProvider"
     ],
     "aliases": {},
-    "files": [],
+    "files": ["Helpers/helpers.php"],
     "requires": []
 }

@@ -11,6 +11,11 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#export" role="tab">
+                <i class="fa fa-exchange"></i>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
                 <i class="fa fa-database"></i>
             </a>
@@ -29,6 +34,14 @@
             <div class="list-group list-group-accent">
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Importações</div>
                 @loader(['loader_path' => 'aside.import'])
+            </div>
+        </div>
+        <div class="tab-pane" id="export" role="tabpanel">
+            <div class="list-group list-group-accent">
+                <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">TXT</div>
+                @loader(['loader_path' => 'aside.export.txt'])
+                <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">API</div>
+                @loader(['loader_path' => 'aside.export.api'])
             </div>
         </div>
         <div class="tab-pane p-3" id="settings" role="tabpanel">
