@@ -40,6 +40,8 @@
             <div class="list-group list-group-accent">
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">TXT</div>
                 @loader(['loader_path' => 'aside.export.txt'])
+                <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Excel</div>
+                @loader(['loader_path' => 'aside.export.excel'])
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">API</div>
                 @loader(['loader_path' => 'aside.export.api'])
             </div>
