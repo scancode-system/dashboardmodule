@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\Facades\Schema;
 use Modules\Dashboard\Console\RefreshLogin;
+use Modules\Dashboard\Console\ModuleDisableAll;
+use Modules\Dashboard\Console\ModuleEnableAll;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -50,6 +52,8 @@ class DashboardServiceProvider extends ServiceProvider
         $this->app->register(MiddlewareServiceProvider::class);
 
         $this->commands([RefreshLogin::class]);
+        $this->commands([ModuleDisableAll::class]);
+        $this->commands([ModuleEnableAll::class]);
     }
 
     /**
