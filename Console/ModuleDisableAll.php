@@ -40,19 +40,13 @@ class ModuleDisableAll extends Command
      */
     public function handle()
     {
-
         $modules = Module::allEnabled();
         foreach ($modules as $module) {
-            $module->disable();
-        }
-
-        $options = $this->options();
-        if($options['force'] === false)
-        {
-            $module = Module::find('dashboard');
-            $module->enable();
-        }
-        
+            if($module->getName() != 'Dashboard' || $this->options()['force'] !== false){
+                $this->comment("Module [{$module}] desabilitado com sucesso.");
+                $module->disable();
+            }
+        }       
     }
 
     /**

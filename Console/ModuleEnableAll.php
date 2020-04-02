@@ -43,6 +43,7 @@ class ModuleEnableAll extends Command
         $modules = Module::allDisabled();
         foreach ($modules as $module) {
             $module->enable();
+                        $this->info("Module [{$module}] habilitado com sucesso.");
         }
     }
 

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use Modules\Dashboard\Console\RefreshLogin;
 use Modules\Dashboard\Console\ModuleDisableAll;
 use Modules\Dashboard\Console\ModuleEnableAll;
+use Modules\Dashboard\Console\CompanySetting;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -54,6 +55,7 @@ class DashboardServiceProvider extends ServiceProvider
         $this->commands([RefreshLogin::class]);
         $this->commands([ModuleDisableAll::class]);
         $this->commands([ModuleEnableAll::class]);
+        $this->commands([CompanySetting::class]);
     }
 
     /**
