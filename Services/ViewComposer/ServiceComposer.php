@@ -8,6 +8,7 @@ use \stdClass;
 
 abstract class ServiceComposer  implements InterfaceComposer {
 
+    protected $view;
 	protected $data;
 
 	public function __construct(){
@@ -15,6 +16,8 @@ abstract class ServiceComposer  implements InterfaceComposer {
 	}
 
     public function compose(View $view) {
+        $this->view = $view;
+        
         $this->data($view);
         $this->assign($view);
         $this->view($view);
