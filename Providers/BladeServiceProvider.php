@@ -4,6 +4,7 @@ namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Modules\Dashboard\View\Components\ModalViewComponent;
 
 
 class BladeServiceProvider extends ServiceProvider {
@@ -19,7 +20,10 @@ class BladeServiceProvider extends ServiceProvider {
 		});
 
         // components
-		Blade::component('dashboard::components.modal_view_component', 'modal_view');
+		//Blade::component('dashboard::components.modal_view_component', 'modal_view');
+		//Blade::component('alert2', Teste::class);
+
+		Blade::component('modal_view', ModalViewComponent::class);
 
         // includes
 		Blade::include('dashboard::includes.modal_destroy_include', 'modal_destroy');

@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Modules\Dashboard\Providers;
 
@@ -13,6 +13,16 @@ use Modules\Dashboard\Console\CompanySetting;
 class DashboardServiceProvider extends ServiceProvider
 {
     /**
+     * @var string $moduleName
+     */
+    protected $moduleName = 'Dashboard';
+
+    /**
+     * @var string $moduleNameLower
+     */
+    protected $moduleNameLower = 'dashboard';
+
+    /**
      * Boot the application events.
      *
      * @return void
@@ -26,13 +36,9 @@ class DashboardServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->registerFactories();
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
-//        dd(config('app.timezone'));
         date_default_timezone_set('America/Sao_Paulo');
-  //      \Config::set('app.timezone', 'America/Sao_Paulo');
-            //    config(['app.timezone' => 'America/Sao_Paulo']);
-               // config(['app.timezone' => 'America/Chicago']);
     }
 
     /**
@@ -42,9 +48,6 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-               // \Config::set('app.timezone', 'America/Sao_Paulo');
-                       //config(['app.timezone' => 'America/Sao_Paulo']);
-
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(BladeServiceProvider::class);
         $this->app->register(ViewComposerServiceProvider::class);
@@ -65,11 +68,18 @@ class DashboardServiceProvider extends ServiceProvider
      */
     protected function registerConfig()
     {
-        $this->publishes([
+        /* $this->publishes([
             __DIR__.'/../Config/config.php' => config_path('dashboard.php'),
         ], 'config');
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'dashboard'
+        );*/
+        
+        $this->publishes([
+            module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
+        ], 'config');
+        $this->mergeConfigFrom(
+            module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
         );
     }
 
@@ -80,7 +90,7 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/modules/dashboard');
+        /*$viewPath = resource_path('views/modules/dashboard');
 
         $sourcePath = __DIR__.'/../Resources/views';
 
@@ -90,7 +100,18 @@ class DashboardServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/dashboard';
-        }, \Config::get('view.paths')), [$sourcePath]), 'dashboard');
+        }, \Config::get('view.paths')), [$sourcePath]), 'dashboard');*/
+        
+
+        $viewPath = resource_path('views/modules/' . $this->moduleNameLower);
+
+        $sourcePath = module_path($this->moduleName, 'Resources/views');
+
+        $this->publishes([
+            $sourcePath => $viewPath
+        ], ['views', $this->moduleNameLower . '-module-views']);
+
+        $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
     }
 
     /**
@@ -100,12 +121,21 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
-        $langPath = resource_path('lang/modules/dashboard');
+        /*$langPath = resource_path('lang/modules/dashboard');
 
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'dashboard');
         } else {
             $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'dashboard');
+        }*/
+
+
+        $langPath = resource_path('lang/modules/' . $this->moduleNameLower);
+
+        if (is_dir($langPath)) {
+            $this->loadTranslationsFrom($langPath, $this->moduleNameLower);
+        } else {
+            $this->loadTranslationsFrom(module_path($this->moduleName, 'Resources/lang'), $this->moduleNameLower);
         }
     }
 
@@ -116,8 +146,12 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production') && $this->app->runningInConsole()) {
+        /*if (! app()->environment('production') && $this->app->runningInConsole()) {
             app(Factory::class)->load(__DIR__ . '/../Database/factories');
+        }*/
+
+        if (! app()->environment('production') && $this->app->runningInConsole()) {
+            app(Factory::class)->load(module_path($this->moduleName, 'Database/factories'));
         }
     }
 
@@ -129,5 +163,16 @@ class DashboardServiceProvider extends ServiceProvider
     public function provides()
     {
         return [];
+    }
+
+    private function getPublishableViewPaths(): array
+    {
+        $paths = [];
+        foreach (\Config::get('view.paths') as $path) {
+            if (is_dir($path . '/modules/' . $this->moduleNameLower)) {
+                $paths[] = $path . '/modules/' . $this->moduleNameLower;
+            }
+        }
+        return $paths;
     }
 }

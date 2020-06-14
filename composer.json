@@ -24,12 +24,12 @@
     },
     "type": "laravel-module",
     "require": {
-        "nwidart/laravel-modules":"^6.0",
+        "nwidart/laravel-modules":"^7",
         "joshbrw/laravel-module-installer": "v0.1.4",
-        "laravelcollective/html": "^6.0",
+        "laravelcollective/html": "^6",
         "maatwebsite/excel": "^3.1",
         "h4cc/wkhtmltopdf-amd64": "0.12.x",
-        "barryvdh/laravel-snappy": "^0.4.6",
+        "barryvdh/laravel-snappy": "^0.4",
         "jansenfelipe/faker-br": "^1.0",
         "i-rocky/eloquent-dynamic-relation": "^1.0",
         "mbezhanov/faker-provider-collection": "^1.2"
