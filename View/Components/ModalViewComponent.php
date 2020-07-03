@@ -17,7 +17,7 @@ class ModalViewComponent extends Component
      *
      * @return void
      */
-    public function __construct($modalId, $editRoute, $modelId)
+    public function __construct($modalId, $editRoute = null, $modelId = null)
     {
         $this->modal_id = $modalId;
         $this->edit_route = $editRoute;
