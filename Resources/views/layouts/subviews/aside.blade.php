@@ -20,15 +20,10 @@
                 <i class="fa fa-database"></i>
             </a>
         </li>
-        <!--<li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#layouts" role="tab">
-                <i class="fa fa-sitemap"></i>
-            </a>
-        </li>-->
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="messages" role="tabpanel">
-            @loader(['loader_path' => 'aside.report'])
+            @include('dashboard::layouts.subviews.aside.report')
         </div>
         <div class="tab-pane" id="timeline" role="tabpanel">
             <div class="list-group list-group-accent">
@@ -39,7 +34,7 @@
         <div class="tab-pane" id="export" role="tabpanel">
             <div class="list-group list-group-accent">
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">TXT</div>
-                @loader(['loader_path' => 'aside.export.txt'])
+                @include('dashboard::layouts.subviews.aside.txt')
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Excel</div>
                 @loader(['loader_path' => 'aside.export.excel'])
                 <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">API</div>

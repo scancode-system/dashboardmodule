@@ -19,6 +19,10 @@ class BladeServiceProvider extends ServiceProvider {
 			return "<?php echo  number_format($expression, 2, ',', '.').'%'; ?>";
 		});
 
+		Blade::directive('datetime', function ($expression) {
+			return "<?php echo (is_null({$expression}))?'Data não definida':{$expression}->format('d/m/Y H:i'); ?>";
+		});
+
         // components
 		//Blade::component('dashboard::components.modal_view_component', 'modal_view');
 		//Blade::component('alert2', Teste::class);

@@ -43,3 +43,20 @@ Route::prefix('setting_dasboard')->middleware('auth')->group(function() {
 Route::prefix('backup')->middleware('auth')->group(function() {
 	Route::put('', 'BackupController@update')->name('backup.update');
 });
+
+
+// portal
+Route::prefix('portal')->middleware('auth')->group(function() {
+	Route::get('update', 'PortalController@update')->name('portal.update');
+});
+
+
+// reports
+Route::prefix('reports')->middleware('auth')->group(function() {
+	Route::get('{report}', 'ReportController@download')->name('reports.download');
+});
+
+// txts
+Route::prefix('txts')->middleware('auth')->group(function() {
+	Route::get('{txt}', 'TxtController@download')->name('txt.download');
+});
