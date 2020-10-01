@@ -6,3 +6,15 @@
 	</button>
 </div>
 @endif
+
+
+
+@if(session()->has('messages_warning'))
+<div class="alert alert-warning alert-dismissible fade show">
+	<ul class="mb-0">
+		@foreach (session()->pull('messages_warning') as $warning)
+		<li>{{ $warning }}</li>
+		@endforeach
+	</ul>
+</div>
+@endif

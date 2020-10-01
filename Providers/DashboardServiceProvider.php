@@ -74,7 +74,6 @@ class DashboardServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../Config/config.php', 'dashboard'
         );*/
-        
         $this->publishes([
             module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
         ], 'config');
@@ -128,7 +127,6 @@ class DashboardServiceProvider extends ServiceProvider
         } else {
             $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'dashboard');
         }*/
-
 
         $langPath = resource_path('lang/modules/' . $this->moduleNameLower);
 

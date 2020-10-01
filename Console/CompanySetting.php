@@ -33,6 +33,9 @@ class CompanySetting extends Command
             $this->call('module:disable-all');
             $this->enable_modules($module);
 
+            $module->enable();
+            $this->info("Module [{$module}] habilitado com sucesso.");
+
         } catch (ModuleNotFoundException $e) {
             $this->comment($e->getMessage());
         }
